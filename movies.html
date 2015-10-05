@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UFT-8">
+	<title>Slideshow</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div id= "container">
+		<h1>Martial Arts Movies</h1>
+		<div id="slideshow">
+			<img id="currentPhoto" src="images/1.jpeg"/>
+			<p id="currentCaption">Journey to the West</p>
+			<span class="btn-con"><button onclick="previous()">Previous</button></span>
+			<span class="btn-con"><button onclick="next()">Next</button></span>
+
+		</div>
+	</div>
+	<script type="text/javascript">
+
+		var slideshow = {
+			directory: "images/",
+			photos:["1.jpeg","2.jpeg","3.jpeg","4.jpeg","5.jpeg"],
+			captions:["Crouching Tiger Hidden Dragon","The Good The Bad The Weird","Kung Fu Hustle","Shaolin","Journey to the West"],
+			currentPhoto: 0,
+
+			getPrevious: function(){
+				if(this.currentPhoto == 0)
+					this.currentPhoto = this.photos.length-1;
+				else
+					this.currentPhoto--;
+
+				var photo = this.directory + this.photos[this.currentPhoto];
+				var caption = this.captions[this.currentPhoto];
+				return{ "photo": photo, "caption": caption };
+			},
+
+			getNext: function(){
+				if(this.currentPhoto == this.photos.length-1)
+					this.currentPhoto = 0;
+				else
+					this.currentPhoto++;
+				
+				var photo = this.directory + this.photos[this.currentPhoto];
+				var caption = this.captions[this.currentPhoto];
+				return{ "photo": photo, "caption": caption };
+			}
+		};
+
+		function next(){
+			var image = slideshow.getNext();
+			document.getElementById("currentPhoto").src = image.photo;
+			document.getElementById("currentCaption").innerHTML = image.caption;
+		}
+
+		function previous(){
+			var image = slideshow.getPrevious();
+			document.getElementById("currentPhoto").src = image.photo;
+			document.getElementById("currentCaption").innerHTML = image.caption;
+}
+	</script>
+
+</body>
+</html>
+  

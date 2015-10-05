@@ -1,0 +1,47 @@
+body{
+	background-color: #000;
+}
+
+h1{
+	font-size: 50px;
+	color: #FFA500;
+	font-family: "Helvetica", "Arial", sans-serif;
+	text-align: center;
+	margin-top: 50px;
+
+}
+
+#slideshow{
+	width:500px;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+#currentPhoto{
+	height: 600px;
+}
+
+#currentCaption{
+	color: #A9A9A9;
+	font-family: "Helvetica", "Arial", sans-serif;
+	font-size: 25px;
+}
+
+button{
+	color: #FFF;
+	width: 25%;
+    height: 25%;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    background-color: #FFA500;
+    border-style: none;
+
+}
+
+.btn-con{
+	padding-right: 60px;
+	padding-left: 60px;
+}
